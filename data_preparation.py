@@ -18,4 +18,4 @@ for code in country_codes.keys():
 for code, file_selection in country_codes.items():
     for filename in file_selection:
         call_string = "aws s3 --no-sign-request cp s3://ooni-data/autoclaved/jsonl/2020-03-0{}/{} ./ooni/{}/{}".format(filename[7], filename, code, filename)
-        subprocess.call(, shell=True)
+        subprocess.call(call_string, shell=True)
